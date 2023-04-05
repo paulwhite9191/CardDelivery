@@ -1,6 +1,8 @@
 package ru.netology.web;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -12,9 +14,21 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 class CardDeliveryTest {
+
+    @BeforeEach
+    void setUpAll() {
+        open("http://localhost:9999");
+
+    }
+
+
+    static void setUp() {
+        Configuration.headless = true;
+
+    }
+
     @Test
     void shouldPositiveTestForm() {
-        open("http://localhost:9999");
         Configuration.holdBrowserOpen = true;
         $x("//input[@placeholder=\"Город\"]").setValue("Рязань");
         $x("//input[@placeholder=\"Дата встречи\"]").doubleClick().sendKeys("BACKSPACE");
