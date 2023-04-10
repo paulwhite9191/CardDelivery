@@ -33,7 +33,7 @@ class CardDeliveryTest {
         $("[data-test-id=agreement]").click();
         $x("//span[@class='button__text']").click();
         $("[data-test-id=notification").shouldBe(appear, Duration.ofSeconds(15));
-        $(".notification__content").shouldHave(text("Встреча успешно забронирована")).shouldBe(visible);
+        $(".notification__content").shouldHave(text("Встреча успешно забронирована на " + createDate(5, "dd.MM.yyyy"))).shouldBe(visible);
     }
 }
 
