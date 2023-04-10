@@ -3,7 +3,6 @@ package ru.netology.web;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -12,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class CardDeliveryTest {
 
